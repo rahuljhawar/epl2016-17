@@ -1,0 +1,61 @@
+<div class="container">
+	<div class="row searchbar">
+		
+		<div class="form-group col-xs-2 ">
+			<select class=" form-control" ng-model="sortColumn">
+				<option value="" disabled selected>Sort By</option>
+				<option value="team1.name">Team 1</option>
+				<option value="team2.name">Team 2</option>
+				<option value="score1">Score 1</option>
+				<option value="score2">Score 2</option>
+			</select> 
+		</div>
+		<div class="input-group col-xs-10">
+
+
+			<div class="input-group-btn search-panel dropdown">
+
+
+			</div>
+			<input type="text" class="form-control" name="x" ng-model="filterField" placeholder="Search team name..." />
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</span>
+		</div>
+	</div>
+
+<table class="table table-striped" id="myTable">
+	<thead>
+		<tr class="header">
+			<th class="text-center">Match</th>
+			<th class="text-center">Team 1</th>
+			<th class="text-center">Score 1</th>
+			<th class="text-center">Team 2</th>
+			<th class="text-center">Score 2</th>
+		</tr>
+	</thead>
+	<tr ng-repeat="mydata in matchCtrl.totalMatches |  filter:filterField | orderBy:sortColumn">
+
+		<td class="text-center content">
+			<a ng-href="#/matchview/{{ mydata.date | date:'yyyyMMdd' }}/{{ mydata.team1.code }}/vs/{{ mydata.team2.code }}">View Match</a><br/>
+			<span id="date">{{mydata.date | date:fullDate }}</span>
+		</td>
+		<td class="text-center content"><a ng-href="#/teamview/{{mydata.team1.code}}">{{mydata.team1.name | uppercase }}</a>
+			<br />
+			<span id="code">[{{mydata.team1.code}}]</span>
+		</td>
+		<td class="text-center content">{{mydata.score1}} 
+		</td>
+		<td class="text-center content"><a ng-href="#/teamview/{{mydata.team2.code}}">{{mydata.team2.name | uppercase}}</a>
+			<br />
+			<span id="code">[{{mydata.team2.code}}]</span>
+		</td>
+		<td class="text-center content">{{mydata.score2}}
+		</td>
+	</tr>
+</tbody>
+</table>
+
+</div>

@@ -1,0 +1,62 @@
+<div class="container">
+	<h1 id="teamName">{{team.teamName}} Statistics</h1>
+	<div class="loaders">
+		<div class="circles">
+		<div class="c100 p{{team.matchesPlayed}} dark big">
+				<span>{{team.matchesPlayed}}</span>
+				<div class="slice">
+					<div class="bar"></div>
+					<div class="fill"></div>
+				</div>
+			</div>
+			<h4 class="name text-center">Matches Played</h4>
+		</div>
+
+		<div class="circles">
+			<div class="c100 p{{team.totalWin}} green big">
+				<span>{{team.totalWin}}</span>
+				<div class="slice">
+					<div class="bar"></div>
+					<div class="fill"></div>
+				</div>
+			</div>
+			<h4 class="name text-center">Matches Won</h4>
+		</div>
+
+		<div class="circles">
+			<div class="c100 p{{team.totalLoss}} big">
+				<span>{{team.totalLoss}}</span>
+				<div class="slice">
+					<div class="bar"></div>
+					<div class="fill"></div>
+				</div>
+			</div>
+			<h4 class="name text-center">Matches Lost</h4>
+		</div>
+
+		<div class="circles">
+			<div class="c100 p{{team.totalTied}} orange big">
+				<span>{{team.totalTied}}</span>
+				<div class="slice">
+					<div class="bar"></div>
+					<div class="fill"></div>
+
+				</div>
+
+			</div>
+			<h4 class="name text-center">Matches Tied</h4>
+		</div>
+
+
+		<div class="circles">
+			<div class="c100 p{{team.goalScored}} dark green big">
+				<span>{{team.goalScored}}</span>
+				<div class="slice">
+					<div class="bar"></div>
+					<div class="fill"></div>
+				</div>
+			</div>
+			<h4 class="name text-center">Goals Scored</h4>
+		</div>
+	</div>
+</div>

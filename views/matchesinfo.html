@@ -1,0 +1,19 @@
+
+
+<div class="container">
+	<h1 class="text-center title">English Premier League 2016-17</h1>
+	<hr>
+	<h2 class="text-center" id="roundname">{{matchview.roundName}} | {{matchview.matchDate |date:fullDate}}</h2>
+	<hr>
+	<div class="row info">
+
+		<div class="col-xs-4 ">
+			<div class="circle" id="team1">{{matchview.teamName1}}</div>
+		</div>
+		<div class="col-xs-4 "><img id="vs" src="images/vs.png"></div>
+		<div class="col-xs-4  ">
+			<div class="circle" id="team2">{{matchview.teamName2}}</div>
+		</div>
+		<div id="rectangle" ><span class="teamcode">{{matchview.teamCode1}}</span> {{matchview.teamScore1}} : {{matchview.teamScore2}} <span class="teamcode">{{matchview.teamCode2}}</span></div>
+	</div>
+</div>
